@@ -1,9 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.dto.AlbumPhotoDTO;
-import com.example.demo.dto.CommentDTO;
-import com.example.demo.dto.PostDTO;
-import com.example.demo.dto.UserAlbumDTO;
+import com.example.demo.dto.*;
 import com.example.demo.services.AlbumService;
 import com.example.demo.services.PostService;
 import com.example.demo.services.UserService;
@@ -67,5 +64,25 @@ class DemoApplicationTests {
 		}
 	}
 
+	@Test
+	void getAddressbyId(){
+		var addresses = userService.getUserAddressById(3);
+		System.out.println(addresses);
 
+
+	}
+	@Test
+	void getAllUsers() {
+		List<UserDTO> users = userService.getAllUsers();
+		for (UserDTO user : users) {
+			System.out.println(user + "\n");
+		}
+	}
+
+	@Test
+	void getFullInfoById(){
+		UserFullDTO userFull= userService.getFullInfoById(2);
+		System.out.println(userFull +"\n");
+
+	}
 }
